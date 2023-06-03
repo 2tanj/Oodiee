@@ -6,22 +6,19 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private PlayerController _player;
-    private Camera _cam;
 
     [SerializeField]
-    private float _distanceFromPlayer;
+    private float _distanceFromPlayer, _positionOffset = 7;
 
-    private void Start()
-    {
-        _cam = Camera.main;
-    }
 
     private void Update()
     {
-        var pos = _cam.transform.position;
-        pos.z = (_player.transform.position.z + _distanceFromPlayer);
-        _cam.transform.position = pos;
+        var pos = transform.position;
+        
+        pos.x = _player.transform.position.x / _positionOffset;
+        pos.z = _player.transform.position.z / _positionOffset;
+        pos.y = (_player.transform.position.y + _distanceFromPlayer);
 
-
+        transform.position = pos;
     }
 }
