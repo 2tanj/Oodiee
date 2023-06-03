@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         pos.x += input.x * _steerSpeed * Time.deltaTime;
         pos.z += input.y * _steerSpeed * -1 * Time.deltaTime; 
         
-        pos.y += _speed * Time.deltaTime;
+        pos.y += _speed * (Time.timeSinceLevelLoad / 50) * Time.deltaTime;
 
         transform.position = pos;
     }
