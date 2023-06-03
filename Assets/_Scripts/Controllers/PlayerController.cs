@@ -55,6 +55,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision");
+        Debug.LogError("GAME OVER!!");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<IPowerUp>(out var powerUp))
+        {
+            powerUp.PickUp();
+            return;
+        }
     }
 }
