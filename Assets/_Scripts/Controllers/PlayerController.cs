@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     [SerializeField]
-    private bool _toSwim = true;
+    private bool _toSwim = true, _increaseSpeed = true;
 
     [Header("Movement")]
     [SerializeField, Range(0,30)]
@@ -48,13 +48,22 @@ public class PlayerController : MonoBehaviour
         pos.x += input.x * _steerSpeed * Time.deltaTime;
         pos.z += input.y * _steerSpeed * -1 * Time.deltaTime; 
         
-        pos.y += _speed * (Time.timeSinceLevelLoad / 50) * Time.deltaTime;
+        if (_increaseSpeed)
+            pos.y += _speed * (Time.timeSinceLevelLoad / 50) * Time.deltaTime;
+        else
+            pos.y += _speed * Time.deltaTime;
 
         transform.position = pos;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (ShieldPU.Instance.IsShielded)
+        {
+            ShieldPU.Instance.HitShield(collision.transform.position);
+            return;
+        }
+
         Debug.LogError("GAME OVER!!");
     }
 
