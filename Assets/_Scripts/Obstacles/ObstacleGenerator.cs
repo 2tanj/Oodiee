@@ -8,18 +8,29 @@ public class ObstacleGenerator : MonoBehaviour
     private GameObject[] _prefab;
 
     [SerializeField]
-    private float _distance = 22.22f, _amountToSpawn = 30, distanceToDespawn;
+    private float _distance = 22.22f, _amountToSpawn = 30, _distanceToDespawn, _spawnDistanceIncrement = 500;
+    private float _distanceToSpawn = 0;
 
+    Vector3 nextPos;
 
     private void Start()
     {
-        SpawnObstacles();   
+        nextPos =  new Vector3(0, 14.5f, 0);
+
+        SpawnObstacles();
+    }
+
+    private void Update()
+    {
+        if (PlayerController.Instance.transform.position.y >= _distanceToSpawn)
+        {
+            SpawnObstacles();
+            _distanceToSpawn += _spawnDistanceIncrement;
+        }
     }
 
     private void SpawnObstacles()
     {
-        var nextPos = new Vector3(0, 14.5f, 0);
-
         for (int i = 0; i < _amountToSpawn; i++)
         {
             var obj = Instantiate(_prefab[Random.Range(0, _prefab.Length)], nextPos, Quaternion.identity, transform);
@@ -27,5 +38,8 @@ public class ObstacleGenerator : MonoBehaviour
             obj.transform.localScale = new Vector3(100, 100, 100);
             nextPos.y += _distance;
         }
+
+
+        Debug.Log("Obstacle count: " + transform.childCount);
     }
 }

@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public float Score { get => PlayerController.Instance.transform.position.y;
                          private set { } }
 
+    // ubrzavanje vremenom
+    // powerups
+    // 
+
     private void Awake() => 
         Instance = this;
 
