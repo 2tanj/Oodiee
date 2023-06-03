@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private bool _toSwim = true;
 
     [Header("Movement")]
-    [SerializeField, Range(0,5)]
+    [SerializeField, Range(0,30)]
     private float _speed = .5f, _steerSpeed = .1f;
     
     [Header("Rotation")]
@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
 
         var pos = transform.position;
 
-        pos.x += input.x * _steerSpeed;
-        pos.z += input.y * _steerSpeed * -1; 
+        pos.x += input.x * _steerSpeed * Time.deltaTime;
+        pos.z += input.y * _steerSpeed * -1 * Time.deltaTime; 
         
-        pos.y += _speed/* * Time.deltaTime*/;
+        pos.y += _speed * Time.deltaTime;
 
         transform.position = pos;
     }

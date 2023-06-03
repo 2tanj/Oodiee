@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 631031336}
   - component: {fileID: 631031337}
   m_Layer: 0
-  m_Name: CameraParent
+  m_Name: CAMERA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 913169626}
   _distanceFromPlayer: -3.23
-  _positionOffset: 3
+  _positionOffset: 2
 --- !u!1 &652976880
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toSwim: 1
-  _speed: 0.15
-  _steerSpeed: 0.06
+  _speed: 10
+  _steerSpeed: 6.5
   _tiltAngle: 60
   _smoothing: 30
 --- !u!54 &913169627
@@ -503,7 +503,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
