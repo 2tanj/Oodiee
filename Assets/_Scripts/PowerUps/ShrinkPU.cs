@@ -8,12 +8,12 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
     [SerializeField]
     private float _duration, _reductionAmount, _numOfBoops = 3;
 
-    private MeshRenderer _mesh;
+    private MeshRenderer   _mesh;
     private SphereCollider _collider;
 
     private void Awake()
     {
-        _mesh = GetComponent<MeshRenderer>();
+        _mesh     = GetComponent<MeshRenderer>();
         _collider = GetComponent<SphereCollider>();
     }
 

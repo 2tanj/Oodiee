@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _tiltAngle = 45.0f, _smoothing = 5.0f;
 
+
     void Awake() =>
         Instance = this;
 
@@ -58,9 +59,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        Debug.Log("");
         if (ShieldPU.Instance.IsShielded)
         {
             ShieldPU.Instance.HitShield(collision.transform.position);
+            return;
+        }
+        if (Heart.Instance.HasBonusLife)
+        {
+            LifePU.Instance.DestroyHeart();
             return;
         }
 
