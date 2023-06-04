@@ -15,6 +15,8 @@ public class Shield : MonoBehaviour
     void Start()
     {
         _renderer = GetComponent<Renderer>();
+
+        Debug.Log("shield");
     }
 
     // Update is called once per frame

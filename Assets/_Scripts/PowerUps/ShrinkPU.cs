@@ -34,7 +34,7 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
         for (int i = 0; i < _numOfBoops; i++)
         {
             sequence.Append(PlayerController.Instance.transform.DOPunchScale(
-            punch: new Vector3(_reductionAmount * .1f, _reductionAmount * .1f, _reductionAmount * .1f),
+            punch: new Vector3(_reductionAmount * .9f, _reductionAmount * .9f, _reductionAmount * .9f),
             duration: .3f,
             vibrato: 5,
             elasticity: 1.2f));
