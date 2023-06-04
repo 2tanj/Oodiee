@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _tiltAngle = 45.0f, _smoothing = 5.0f;
 
+    public bool HasRevived { get; set; }
 
     void Awake() =>
         Instance = this;
@@ -57,30 +58,28 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (ShieldPU.Instance.IsShielded)
+    //    {
+    //        ShieldPU.Instance.HitShield(collision.transform.position);
+    //        return;
+    //    }
+    //    if (LifePU.Instance.HasBonusLife)
+    //    {
+    //        LifePU.Instance.DestroyHeart();
+    //        return;
+    //    }
 
-        Debug.Log("");
-        if (ShieldPU.Instance.IsShielded)
-        {
-            ShieldPU.Instance.HitShield(collision.transform.position);
-            return;
-        }
-        if (Heart.Instance.HasBonusLife)
-        {
-            LifePU.Instance.DestroyHeart();
-            return;
-        }
+    //    Debug.LogError("GAME OVER!!");
+    //}
 
-        Debug.LogError("GAME OVER!!");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.TryGetComponent<IPowerUp>(out var powerUp))
-        {
-            powerUp.PickUp();
-            return;
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.TryGetComponent<IPowerUp>(out var powerUp))
+    //    {
+    //        powerUp.PickUp();
+    //        return;
+    //    }
+    //}
 }

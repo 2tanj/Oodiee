@@ -11,7 +11,7 @@ public class LifePU : MonoBehaviour, IPowerUp
 
     public bool HasBonusLife { get; set; } = false;
 
-    private bool _hasBeenUsed = false;
+    //private bool _hasBeenUsed = false;
 
     private MeshRenderer _mesh;
     private SphereCollider _collider;
@@ -35,33 +35,30 @@ public class LifePU : MonoBehaviour, IPowerUp
 
     public void PickUp()
     {
-        if (_hasBeenUsed)
+        if (PlayerController.Instance.HasRevived)
             return;
 
         HasBonusLife = true;
-        _hasBeenUsed = true;
+        PlayerController.Instance.HasRevived = true;
 
         _mesh.enabled = false;
         _collider.enabled = false;
 
         _heartMesh.SetActive(true);
-        
     }
 
     public void DestroyHeart()
     {
-        Debug.Log("cao");
         HasBonusLife = false;
 
-        var instance = Instantiate(_fracturedPrefab, transform.position, Quaternion.identity);
+        var instance = Instantiate(_fracturedPrefab, _heartMesh.transform.position, Quaternion.identity/*_heartMesh.transform.rotation*/, PlayerController.Instance.transform);
+        Destroy(_heartMesh.gameObject);
         foreach (var r in instance.GetComponentsInChildren<Rigidbody>())
         {
             var force = (r.transform.position - transform.position).normalized * 750f;
             r.AddForce(force);
-
-            Debug.Log(r.name);
         }
 
-        Destroy(instance);
+        //Destroy(instance);
     }
 }
