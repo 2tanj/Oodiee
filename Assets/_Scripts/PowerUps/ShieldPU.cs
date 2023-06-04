@@ -30,7 +30,8 @@ public class ShieldPU : IAudioPlayer, IPowerUp
         _mesh = GetComponent<MeshRenderer>();
         _collider = GetComponent<SphereCollider>();
 
-        _shield._shieldOn = true;
+
+        PlayerController.Instance.Shield._shieldOn = true;
     }
 
     public void PickUp()
@@ -38,14 +39,14 @@ public class ShieldPU : IAudioPlayer, IPowerUp
         IsShielded = true;
 
         PlaySound(_sound);
-        _shield.OpenCloseShield();
+        PlayerController.Instance.Shield.OpenCloseShield();
 
         StartCoroutine(Finish());
     }
 
     public void HitShield(Vector3 pos)
     {
-        _shield.HitShield(pos);
+        PlayerController.Instance.Shield.HitShield(pos);
     }
 
     private IEnumerator Finish()
@@ -56,7 +57,7 @@ public class ShieldPU : IAudioPlayer, IPowerUp
         yield return new WaitForSeconds(_duration);
         IsShielded = false;
         PlaySound(_sound);
-        _shield.OpenCloseShield();
+        PlayerController.Instance.Shield.OpenCloseShield();
 
         Destroy(gameObject);
     }

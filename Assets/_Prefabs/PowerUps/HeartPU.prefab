@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 101287098968434350}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.074113, y: 48.16475, z: 14.074116}
+  m_LocalScale: {x: 0.34183204, y: 1.1698253, z: 0.3418321}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pitchRandomness: 0.05
   _fracturedPrefab: {fileID: 2832960832350365836, guid: 9dd47e03ee3c63e4aa89d12686db88f6, type: 3}
-  _heartMesh: {fileID: 0}
+  _heartMesh: {fileID: 1878879424681537397, guid: 314791dc57019d148a21663bdfdd1ff2, type: 3}
   _sound: {fileID: 8300000, guid: 7c465411376a96f4495e02da98a0b394, type: 3}
   _shatterSound: {fileID: 8300000, guid: bf78b8bdba92662498a97771d983e0aa, type: 3}
 --- !u!135 &511893499
@@ -112,8 +112,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.012439092
-  m_Center: {x: -0.00000001075704, y: 0.000072691735, z: -0.01}
+  m_Radius: 0.009277646
+  m_Center: {x: -0.000000010898014, y: 0.00007269142, z: 0.00081916543}
 --- !u!82 &1432868095707169442
 AudioSource:
   m_ObjectHideFlags: 0

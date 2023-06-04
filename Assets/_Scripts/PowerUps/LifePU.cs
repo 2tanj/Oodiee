@@ -7,12 +7,12 @@ public class LifePU : IAudioPlayer, IPowerUp
     public static LifePU Instance;
 
     [SerializeField]
-    private GameObject _fracturedPrefab, _heartMesh;
+    private GameObject _fracturedPrefab;
 
     [SerializeField]
     private AudioClip _sound, _shatterSound;
 
-    public bool HasBonusLife { get; set; } = false;
+    public static bool HasBonusLife { get; set; } = false;
 
     //private bool _hasBeenUsed = false;
 
@@ -52,23 +52,23 @@ public class LifePU : IAudioPlayer, IPowerUp
         _mesh.enabled = false;
         _collider.enabled = false;
 
-        _heartMesh.SetActive(true);
+        PlayerController.Instance.HeartMesh.SetActive(true);
     }
 
     public void DestroyHeart()
     {
         HasBonusLife = false;
 
-        var instance = Instantiate(_fracturedPrefab, _heartMesh.transform.position, Quaternion.identity/*_heartMesh.transform.rotation*/, PlayerController.Instance.transform);
-        Destroy(_heartMesh.gameObject);
+        //var instance = Instantiate(_fracturedPrefab, _heartMesh.transform.position, Quaternion.identity/*_heartMesh.transform.rotation*/, PlayerController.Instance.transform);
+        PlayerController.Instance.HeartMesh.SetActive(false);
         PlaySound(_shatterSound);
-        foreach (var r in instance.GetComponentsInChildren<MeshCollider>())
-        {
-            var force = (r.transform.position - transform.position).normalized * 750f;
-            r.GetComponent<Rigidbody>().AddForce(force);
-        }
+        //foreach (var r in instance.GetComponentsInChildren<MeshCollider>())
+        //{
+        //    var force = (r.transform.position - transform.position).normalized * 750f;
+        //    r.GetComponent<Rigidbody>().AddForce(force);
+        //}
 
-        StartCoroutine(DestroyShatter(instance));
+        //StartCoroutine(DestroyShatter(instance));
     }
 
     private IEnumerator DestroyShatter(GameObject obj)

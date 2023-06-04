@@ -20,6 +20,10 @@ public class PlayerCollider : IAudioPlayer
         Debug.LogError("GAME OVER!! " + collision.gameObject.name);
 
         PlayerController.Instance._toSwim = false;
+
+        DeathGUI.Instance.Animate();
+
+        PlayerController.Instance.IsDead = true;
     }
 
     private IEnumerator DisableDeath()
@@ -36,7 +40,7 @@ public class PlayerCollider : IAudioPlayer
             ShieldPU.Instance.HitShield(collision.transform.position);
             return;
         }
-        if (LifePU.Instance.HasBonusLife)
+        if (LifePU.HasBonusLife)
         {
             LifePU.Instance.DestroyHeart();
             StartCoroutine(DisableDeath());

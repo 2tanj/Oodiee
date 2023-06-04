@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _tiltAngle = 45.0f, _smoothing = 5.0f;
 
-    public bool HasRevived { get; set; }
+    [field: SerializeField]
+    public GameObject HeartMesh { get; private set; }
+    
+    [field: SerializeField]
+    public Shield Shield { get; private set; }
+
+    public bool HasRevived { get; set; } = false;
+    public bool IsDead { get; set; } = false;
 
     void Awake() =>
         Instance = this;

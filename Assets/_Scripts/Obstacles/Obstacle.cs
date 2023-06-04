@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-
-    // setuj default rotaciju za obstacle
-
-
+    [field: SerializeField]
+    public List<GameObject> PowerUps{ get; private set; }
 }
