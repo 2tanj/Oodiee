@@ -2,19 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Linq;
 
 public class ShrinkPU : MonoBehaviour, IPowerUp
 {
     [SerializeField]
     private float _duration, _reductionAmount, _numOfBoops = 3;
 
-    private MeshRenderer   _mesh;
-    private SphereCollider _collider;
+    [SerializeField]
+    private List<MeshRenderer>   _mesh;
+    private SphereCollider       _collider;
 
     private void Awake()
     {
-        _mesh     = GetComponent<MeshRenderer>();
         _collider = GetComponent<SphereCollider>();
+        foreach (var r in GetComponentsInChildren<MeshRenderer>())
+        {
+            _mesh.Add(r);
+        }
     }
 
     public void PickUp()
@@ -25,16 +30,17 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
 
     private IEnumerator Finish()
     {
-        _mesh.enabled = false;
+        _mesh.ForEach(m => m.gameObject.SetActive(false));
         _collider.enabled = false;
         yield return new WaitForSeconds(_duration);
 
         var sequence = DOTween.Sequence();
+        var boopAmount = (PlayerController.Instance.transform.localScale * _reductionAmount) / 3f;
 
         for (int i = 0; i < _numOfBoops; i++)
         {
             sequence.Append(PlayerController.Instance.transform.DOPunchScale(
-            punch: new Vector3(_reductionAmount * .9f, _reductionAmount * .9f, _reductionAmount * .9f),
+            punch: boopAmount,
             duration: .3f,
             vibrato: 5,
             elasticity: 1.2f));

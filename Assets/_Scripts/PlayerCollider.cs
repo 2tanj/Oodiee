@@ -2,22 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollider : MonoBehaviour
+public class PlayerCollider : IAudioPlayer
 {
+    [SerializeField]
+    private AudioClip _deathSound;
+
     private bool _canDie = true;
+
+    private void Awake()
+    {
+        SetupAudio();
+    }
+
+    private void Death()
+    {
+        PlaySound(_deathSound);
+        Debug.LogError("GAME OVER!!");
+
+        PlayerController.Instance._toSwim = false;
+    }
 
     private IEnumerator DisableDeath()
     {
         _canDie = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         _canDie = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!_canDie)
-            return;
-
         if (ShieldPU.Instance.IsShielded)
         {
             ShieldPU.Instance.HitShield(collision.transform.position);
@@ -30,8 +43,11 @@ public class PlayerCollider : MonoBehaviour
 
             return;
         }
+        
+        if (!_canDie)
+            return;
 
-        Debug.LogError("GAME OVER!!");
+        Death();
     }
 
     private void OnTriggerEnter(Collider other)

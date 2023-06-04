@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     [SerializeField]
-    private bool _toSwim = true, _increaseSpeed = true;
+    public bool _toSwim = true, _increaseSpeed = true;
 
     [Header("Movement")]
     [SerializeField, Range(0,30)]
