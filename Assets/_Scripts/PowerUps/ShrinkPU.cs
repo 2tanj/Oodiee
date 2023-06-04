@@ -4,8 +4,11 @@ using UnityEngine;
 using DG.Tweening;
 using System.Linq;
 
-public class ShrinkPU : MonoBehaviour, IPowerUp
+public class ShrinkPU : IAudioPlayer, IPowerUp
 {
+    [SerializeField]
+    private AudioClip _sound;
+
     [SerializeField]
     private float _duration, _reductionAmount, _numOfBoops = 3;
 
@@ -15,6 +18,8 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
 
     private void Awake()
     {
+        SetupAudio();
+
         _collider = GetComponent<SphereCollider>();
         foreach (var r in GetComponentsInChildren<MeshRenderer>())
         {
@@ -24,6 +29,8 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
 
     public void PickUp()
     {
+        PlaySound(_sound);
+
         PlayerController.Instance.transform.DOScale(PlayerController.Instance.transform.localScale / _reductionAmount, .2f);
         StartCoroutine(Finish());
     }
@@ -35,7 +42,7 @@ public class ShrinkPU : MonoBehaviour, IPowerUp
         yield return new WaitForSeconds(_duration);
 
         var sequence = DOTween.Sequence();
-        var boopAmount = (PlayerController.Instance.transform.localScale * _reductionAmount) / 3f;
+        var boopAmount = (PlayerController.Instance.transform.localScale * _reductionAmount) / 3.6f;
 
         for (int i = 0; i < _numOfBoops; i++)
         {

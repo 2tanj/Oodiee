@@ -14,10 +14,10 @@ public class PlayerCollider : IAudioPlayer
         SetupAudio();
     }
 
-    private void Death()
+    private void Death(Collision collision)
     {
         PlaySound(_deathSound);
-        Debug.LogError("GAME OVER!!");
+        Debug.LogError("GAME OVER!! " + collision.gameObject.name);
 
         PlayerController.Instance._toSwim = false;
     }
@@ -47,7 +47,7 @@ public class PlayerCollider : IAudioPlayer
         if (!_canDie)
             return;
 
-        Death();
+        Death(collision);
     }
 
     private void OnTriggerEnter(Collider other)

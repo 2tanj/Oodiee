@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldPU : MonoBehaviour, IPowerUp
+public class ShieldPU : IAudioPlayer, IPowerUp
 {
     public static ShieldPU Instance;
     public bool IsShielded { get; private set; }
@@ -13,11 +13,17 @@ public class ShieldPU : MonoBehaviour, IPowerUp
     [SerializeField]
     private float _duration;
 
+    [SerializeField]
+    private AudioClip _sound;
+
     private MeshRenderer _mesh;
     private SphereCollider _collider;
 
-    void Awake() =>
+    void Awake()
+    {
         Instance = this;
+        SetupAudio();
+    }
 
     private void Start()
     {
@@ -30,7 +36,10 @@ public class ShieldPU : MonoBehaviour, IPowerUp
     public void PickUp()
     {
         IsShielded = true;
+
+        PlaySound(_sound);
         _shield.OpenCloseShield();
+
         StartCoroutine(Finish());
     }
 
@@ -46,6 +55,7 @@ public class ShieldPU : MonoBehaviour, IPowerUp
         
         yield return new WaitForSeconds(_duration);
         IsShielded = false;
+        PlaySound(_sound);
         _shield.OpenCloseShield();
 
         Destroy(gameObject);

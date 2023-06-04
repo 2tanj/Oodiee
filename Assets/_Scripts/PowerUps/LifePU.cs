@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifePU : MonoBehaviour, IPowerUp
+public class LifePU : IAudioPlayer, IPowerUp
 {
     public static LifePU Instance;
 
     [SerializeField]
     private GameObject _fracturedPrefab, _heartMesh;
+
+    [SerializeField]
+    private AudioClip _sound, _shatterSound;
 
     public bool HasBonusLife { get; set; } = false;
 
@@ -16,8 +19,11 @@ public class LifePU : MonoBehaviour, IPowerUp
     private MeshRenderer _mesh;
     private SphereCollider _collider;
 
-    void Awake() =>
+    void Awake()
+    {
         Instance = this;
+        SetupAudio();
+    }
 
     private void Start()
     {
@@ -38,6 +44,8 @@ public class LifePU : MonoBehaviour, IPowerUp
         if (PlayerController.Instance.HasRevived)
             return;
 
+        PlaySound(_sound);
+
         HasBonusLife = true;
         PlayerController.Instance.HasRevived = true;
 
@@ -53,12 +61,19 @@ public class LifePU : MonoBehaviour, IPowerUp
 
         var instance = Instantiate(_fracturedPrefab, _heartMesh.transform.position, Quaternion.identity/*_heartMesh.transform.rotation*/, PlayerController.Instance.transform);
         Destroy(_heartMesh.gameObject);
-        foreach (var r in instance.GetComponentsInChildren<Rigidbody>())
+        PlaySound(_shatterSound);
+        foreach (var r in instance.GetComponentsInChildren<MeshCollider>())
         {
             var force = (r.transform.position - transform.position).normalized * 750f;
-            r.AddForce(force);
+            r.GetComponent<Rigidbody>().AddForce(force);
         }
 
-        //Destroy(instance);
+        StartCoroutine(DestroyShatter(instance));
+    }
+
+    private IEnumerator DestroyShatter(GameObject obj)
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(obj.gameObject);
     }
 }
