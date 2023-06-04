@@ -17,6 +17,8 @@ public class PlayerCollider : IAudioPlayer
     private void Death(Collision collision)
     {
         PlaySound(_deathSound);
+        //NEW
+        Destroy(this.gameObject);
         Debug.LogError("GAME OVER!! " + collision.gameObject.name);
 
         PlayerController.Instance._toSwim = false;
