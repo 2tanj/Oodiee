@@ -35,7 +35,9 @@ public class PlayerCollider : IAudioPlayer
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (ShieldPU.Instance.IsShielded)
+        Debug.Log("shield: " + ShieldPU.Instance.IsShielded);
+
+        if (PlayerController.Instance.IsShielded)
         {
             ShieldPU.Instance.HitShield(collision.transform.position);
             return;

@@ -36,7 +36,10 @@ public class ShieldPU : IAudioPlayer, IPowerUp
 
     public void PickUp()
     {
-        IsShielded = true;
+        PlayerController.Instance.IsShielded = true;
+
+
+        Debug.Log("on pickup: " + PlayerController.Instance.IsShielded);
 
         PlaySound(_sound);
         PlayerController.Instance.Shield.OpenCloseShield();
@@ -55,7 +58,7 @@ public class ShieldPU : IAudioPlayer, IPowerUp
         _collider.enabled = false;
         
         yield return new WaitForSeconds(_duration);
-        IsShielded = false;
+        PlayerController.Instance.IsShielded = false;
         PlaySound(_sound);
         PlayerController.Instance.Shield.OpenCloseShield();
 

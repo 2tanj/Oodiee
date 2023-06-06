@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public bool HasRevived { get; set; } = false;
     public bool IsDead { get; set; } = false;
+    public bool IsShielded { get; set; } = false;
 
     void Awake() =>
         Instance = this;

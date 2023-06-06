@@ -609,6 +609,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: UNITY_PIPELINE_URP
+    4: UNITY_PIPELINE_URP
     13: UNITY_PIPELINE_URP
   additionalCompilerArguments: {}
   platformArchitecture: {}
