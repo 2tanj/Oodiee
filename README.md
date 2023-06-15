@@ -8,3 +8,5 @@ gameplay of Oodiee as you embark on an endless aquatic adventure!
  
 Oodiee was created as an entry in the OpenIT 2023 GameJam and it was awarded first
 place by the judges. Me and two other friends created it in under 30 hours.
+
+Status: `Currently in development`
