@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
+
+    [SerializeField]
+    private InputAction _input;
 
     [SerializeField]
     public bool _toSwim = true, _increaseSpeed = true;
@@ -33,19 +37,22 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(_input.ReadValue<Vector2>());
         //Smoothly tilts a transform towards a target rotation.
-        float tiltAroundZ = Input.GetAxis("Horizontal") * _tiltAngle * -1;
-        float tiltAroundX = Input.GetAxis("Vertical") * _tiltAngle * -1;
+        //float tiltAroundZ = Input.GetAxis("Horizontal") * _tiltAngle * -1;
+        //float tiltAroundX = Input.GetAxis("Vertical") * _tiltAngle * -1;
 
+        float tiltAroundZ = _input.ReadValue<Vector2>().x * _tiltAngle * -1;
+        float tiltAroundX = _input.ReadValue<Vector2>().y * _tiltAngle * -1;
         //Rotate the cube by converting the angles into a quaternion.
         Quaternion target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
 
         //Dampen towards the target rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * _smoothing);
 
-        var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        Swim(input);
+        //var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Swim(_input.ReadValue<Vector2>());
+        //Swim(input);
     }
 
     private void Swim(Vector2 input)
@@ -90,4 +97,8 @@ public class PlayerController : MonoBehaviour
     //        return;
     //    }
     //}
+
+    private void OnEnable()  => _input.Enable();
+
+    private void OnDisable() => _input.Disable();
 }

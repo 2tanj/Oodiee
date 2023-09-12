@@ -33,10 +33,10 @@ public class LifePU : IAudioPlayer, IPowerUp
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DestroyHeart();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    DestroyHeart();
+        //}
     }
 
     public void PickUp()
