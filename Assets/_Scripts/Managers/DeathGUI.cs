@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class DeathGUI : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class DeathGUI : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerController.Instance.IsDead && _canSkip && Input.anyKey)
+        if (PlayerController.Instance.IsDead && _canSkip && Touchscreen.current.press.isPressed)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
