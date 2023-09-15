@@ -48,8 +48,18 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         HandleMobileInput();
-        var input = _isDragging ? (GetMobileInput() - _startPoint).normalized : Vector2.zero;
 
+        // old input: (GetMobileInput() - _startPoint).normalized 
+
+        // new input
+        var test = (GetMobileInput() - _startPoint) / 25; // 25 je magican broj koji koristimo da bi oduzimanje vektora doneli na korisnu sumu (-1 - 1)
+        test.x = Mathf.Clamp(test.x, -1, 1);
+        test.y = Mathf.Clamp(test.y, -1, 1);
+
+        var input = _isDragging ? test : Vector2.zero;
+
+        //new input
+        Debug.Log(test);
         _startPoint = GetMobileInput();
 
         //Debug.Log(_input.ReadValue<Vector2>());
@@ -73,7 +83,7 @@ public class PlayerController : MonoBehaviour
         Swim(input);
 
 
-        Debug.Log(input);
+        //Debug.Log(input);
     }
 
     private void HandleMobileInput()

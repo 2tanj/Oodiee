@@ -2209,7 +2209,7 @@ MonoBehaviour:
   _smoothing: 5
   <HeartMesh>k__BackingField: {fileID: 3608049830716625978}
   <Shield>k__BackingField: {fileID: 1404273928}
-  <IsShielded>k__BackingField: 0
+  <IsShielded>k__BackingField: 1
 --- !u!1001 &101287098875984217
 PrefabInstance:
   m_ObjectHideFlags: 0
