@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     {
         var pos = transform.position;
         
-        pos.x = _player.transform.position.x / _positionOffset;
+        pos.x = _player.transform.position.x/* / _positionOffset*/;
         pos.z = _player.transform.position.z / _positionOffset;
         pos.y = (_player.transform.position.y + _distanceFromPlayer);
 

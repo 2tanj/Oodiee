@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
     public bool HasRevived { get; set; } = false;
     public bool IsDead { get; set; } = false;
+    [field: SerializeField]
     public bool IsShielded { get; set; } = false;
 
     void Awake()
