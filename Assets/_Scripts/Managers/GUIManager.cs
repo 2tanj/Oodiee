@@ -9,6 +9,8 @@ public class GUIManager : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _scoreText;
+    [SerializeField]
+    private TextMeshProUGUI _fpsText;
 
     void Awake() => 
         Instance = this;
@@ -17,5 +19,7 @@ public class GUIManager : MonoBehaviour
     {
         int score = (int)GameManager.Instance.Score;
         _scoreText.text = score.ToString();
+
+        _fpsText.text = ((int)(1f / Time.unscaledDeltaTime)).ToString();
     }
 }
