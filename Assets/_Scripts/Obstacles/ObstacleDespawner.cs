@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstacleDespawner : MonoBehaviour
 {
+    // BUG: check trello
+    // fix: destroy all children
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);

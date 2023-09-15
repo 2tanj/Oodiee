@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3107317239840671833}
   - component: {fileID: 1468106119332617408}
   - component: {fileID: 1601784937290791909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pCylinder554
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8191763952509344652}
   - component: {fileID: -7229583153788420246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tube14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1433959371533665591}
   - component: {fileID: 5102680010286570173}
   - component: {fileID: 315782017930066836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane182
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 4004156957595718555}
   - component: {fileID: 933189521851886655}
   - component: {fileID: 3267211028506497892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane183
   m_TagString: Untagged
   m_Icon: {fileID: 0}

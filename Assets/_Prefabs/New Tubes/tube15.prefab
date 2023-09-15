@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5125846790458420935}
   - component: {fileID: 9055053987308412655}
   - component: {fileID: 2526547828964073590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane195
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4298058350801046185}
   - component: {fileID: 7550384812301639995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tube15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 3746406838658690497}
   - component: {fileID: 2231317857040638163}
   - component: {fileID: 9060688034585263923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane194
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,6 +236,10 @@ PrefabInstance:
     - target: {fileID: 909575555594835234, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
       propertyPath: m_Name
       value: ShieldPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 909575555594835234, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 909575555594835245, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
       propertyPath: m_RootOrder

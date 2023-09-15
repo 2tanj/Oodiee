@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5325760783820635138}
   - component: {fileID: 8266640799027980877}
   - component: {fileID: 7161182760962156845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane115
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7817271925217075643}
   - component: {fileID: 9044020767032408871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3772584284785726070}
   - component: {fileID: 7676263318319696196}
   - component: {fileID: 7266341511982608339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba12 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

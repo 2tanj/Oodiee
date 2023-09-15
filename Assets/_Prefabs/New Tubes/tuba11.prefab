@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2858272736052992221}
   - component: {fileID: 4009902880507498768}
   - component: {fileID: 9052823471114618162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane170
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1470329368900519153}
   - component: {fileID: 251617183843691675}
   - component: {fileID: 175561110833387057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane171
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7167786715295066798}
   - component: {fileID: 6624641946817086091}
   - component: {fileID: 3429237826849090112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane166
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2497622696131889930}
   - component: {fileID: -2445780070737882752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 67426133876245193}
   - component: {fileID: 9040905837891036448}
   - component: {fileID: 5153294404880790972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tubaoriginal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 1066356604585682082}
   - component: {fileID: 4014586268610366285}
   - component: {fileID: 6600364842180887581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane169
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 6985594526608922567}
   - component: {fileID: 5944203371618377493}
   - component: {fileID: 2327343761286482514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane167
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 9217708629322043094}
   - component: {fileID: 282589609855330791}
   - component: {fileID: 605301920505685766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane168
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 101287098968434350, guid: 4974b0b80d80803499747eec24b4410c, type: 3}
       propertyPath: m_Name
       value: HeartPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 101287098968434350, guid: 4974b0b80d80803499747eec24b4410c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4974b0b80d80803499747eec24b4410c, type: 3}

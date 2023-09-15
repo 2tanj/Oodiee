@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3886598265850528501}
   - component: {fileID: 489926153521516532}
   - component: {fileID: 4113160634952482694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7378346755356140536}
   - component: {fileID: -7464447505853242039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 2439232153066312555}
   - component: {fileID: 4189551012250507770}
   - component: {fileID: 7347315567773527100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1494229595559984964}
   - component: {fileID: 7162560379866052682}
   - component: {fileID: 5393182353232629251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba08 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartPU
       objectReference: {fileID: 0}
+    - target: {fileID: 101287098968434350, guid: 4974b0b80d80803499747eec24b4410c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4974b0b80d80803499747eec24b4410c, type: 3}
 --- !u!4 &1133940190498092024 stripped
@@ -379,9 +383,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7378346755356140536}
     m_Modifications:
+    - target: {fileID: 68664653293953941, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663970751024642328, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628273800135035812, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_Name
       value: ShrinkPU-Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_RootOrder
@@ -426,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883243732070253703, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}

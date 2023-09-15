@@ -50,11 +50,13 @@ public class PlayerController : MonoBehaviour
         HandleMobileInput();
         var input = _isDragging ? (GetMobileInput() - _startPoint).normalized : Vector2.zero;
 
+        _startPoint = GetMobileInput();
+
         //Debug.Log(_input.ReadValue<Vector2>());
         //Smoothly tilts a transform towards a target rotation.
         //float tiltAroundZ = Input.GetAxis("Horizontal") * _tiltAngle * -1;
         //float tiltAroundX = Input.GetAxis("Vertical") * _tiltAngle * -1;
-        
+
         float tiltAroundZ = input.x * _tiltAngle * -1;
         float tiltAroundX = input.y * _tiltAngle * -1;
 
@@ -87,8 +89,6 @@ public class PlayerController : MonoBehaviour
             _startPoint = GetMobileInput();
             _isDragging = true;
         }
-
-
     }
 
     private void Swim(Vector2 input)

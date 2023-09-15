@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6342905488552627469}
   - component: {fileID: 726825534698169358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tube13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 909251489593961329}
   - component: {fileID: 2058591567597929808}
   - component: {fileID: 4867461233417559687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane179
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5309095499174284908}
   - component: {fileID: 7347659028165901759}
   - component: {fileID: 8156240803996350292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tubaoriginal7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,9 +232,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6342905488552627469}
     m_Modifications:
+    - target: {fileID: 68664653293953941, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663970751024642328, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628273800135035812, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_Name
       value: ShrinkPU-Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_RootOrder
@@ -291,6 +307,10 @@ PrefabInstance:
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883243732070253703, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}

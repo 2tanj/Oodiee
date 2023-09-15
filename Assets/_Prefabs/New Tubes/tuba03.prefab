@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 518266433037469614}
   - component: {fileID: 9101523327425800538}
   - component: {fileID: 3558627921418547824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane95
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029450666628845221}
   - component: {fileID: -4244307068698194605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 4962659308098778454}
   - component: {fileID: 635839704330363933}
   - component: {fileID: 3632918177267786837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane96
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4586291932031783368}
   - component: {fileID: 4294610023617359080}
   - component: {fileID: 6008534916121019882}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane98
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 4300361563767017108}
   - component: {fileID: 6901044904572595644}
   - component: {fileID: 3996146648807840374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 3815982002455805896}
   - component: {fileID: 4916557499249891876}
   - component: {fileID: 150894600710503350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane94
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 3334082444341342811}
   - component: {fileID: 3795298651372695516}
   - component: {fileID: 2519133951121887430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane99
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 2099179584338939229}
   - component: {fileID: 78834593953579083}
   - component: {fileID: 6869280295742268961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane97
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 4701478692447479536}
   - component: {fileID: 95407206783822288}
   - component: {fileID: 5670857997123949564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba11 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,9 +725,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2029450666628845221}
     m_Modifications:
+    - target: {fileID: 68664653293953941, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663970751024642328, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628273800135035812, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_Name
       value: ShrinkPU-Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981467386748801958, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_RootOrder
@@ -784,6 +800,10 @@ PrefabInstance:
     - target: {fileID: 5650445906742036764, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883243732070253703, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83e8122e099d514395f4aa12d5ccd4b, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4027896023017907223}
   - component: {fileID: 7474781206074107063}
   - component: {fileID: 8466288144371733906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane85
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8731000459567497714}
   - component: {fileID: 4717026364536265389}
   - component: {fileID: 216469007284496694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane80
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7120277942023183824}
   - component: {fileID: 8228882989456434857}
   - component: {fileID: 7044540492366508015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane84
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 2940098679265707213}
   - component: {fileID: 5498883159616738359}
   - component: {fileID: 5024524970664792783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4096406864473187486}
   - component: {fileID: -237693805141348313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 9114671702314210948}
   - component: {fileID: 8842583099583480866}
   - component: {fileID: 4409582507460252024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane78
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 1276479484918724833}
   - component: {fileID: 8626735984390183063}
   - component: {fileID: 5107339367043417589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tuba10 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 312752702267876172}
   - component: {fileID: 1583285140649407667}
   - component: {fileID: 5350836956543930914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane81
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 4148898002671554542}
   - component: {fileID: 4570267976476425867}
   - component: {fileID: 2845374589375575330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane82
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 8607634925608908099}
   - component: {fileID: 2470172483134844848}
   - component: {fileID: 2420263841201145654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane77
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,6 +813,10 @@ PrefabInstance:
     - target: {fileID: 909575555594835234, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
       propertyPath: m_Name
       value: ShieldPU
+      objectReference: {fileID: 0}
+    - target: {fileID: 909575555594835234, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 909575555594835245, guid: 7388bb0f4bf4b2f4aa3b7f8d405072d2, type: 3}
       propertyPath: m_RootOrder

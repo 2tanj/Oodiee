@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770288979047894851}
   - component: {fileID: 8509301764499510729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: meni tuba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 1131341174686489748}
   - component: {fileID: 2287760756984141145}
   - component: {fileID: 6177775261861429627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane170
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 5431573350592048871}
   - component: {fileID: 8356077150230939330}
   - component: {fileID: 544604083508833801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane166
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 4359031304730869944}
   - component: {fileID: 3126667316940138706}
   - component: {fileID: 3059770175230415480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane171
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 5253477624907912078}
   - component: {fileID: 8820236494717803356}
   - component: {fileID: 600572994164264475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane167
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 6337173857071418015}
   - component: {fileID: 3166662645487889838}
   - component: {fileID: 2341798993567359823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane168
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 2951617606381782656}
   - component: {fileID: 6155986178574737769}
   - component: {fileID: 8042838290623377909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tubaoriginal3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 2798352250497523947}
   - component: {fileID: 2283157704246021892}
   - component: {fileID: 8322933585103421524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pPlane169
   m_TagString: Untagged
   m_Icon: {fileID: 0}
