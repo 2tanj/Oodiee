@@ -5,35 +5,47 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField]
+    private bool _whichScene = true; // true = GameScene1 / false = GameScene
     CinemachineVirtualCamera _camera;
     CinemachineFramingTransposer _cameraBody;
 
-    //[SerializeField]
-    //private PlayerController _player;
+    [SerializeField]
+    private PlayerController _player;
 
-    //[SerializeField]
-    //private float _distanceFromPlayer, _positionOffset = 7;
+    [SerializeField]
+    private float _distanceFromPlayer, _positionOffset = 7;
 
     private void Start()
     {
-        _camera = GetComponent<CinemachineVirtualCamera>();
-        _cameraBody = _camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        if (!_whichScene)
+        {
+            _camera = GetComponent<CinemachineVirtualCamera>();
+            _cameraBody = _camera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        _cameraBody.m_ScreenX = .5f;
-        _cameraBody.m_ScreenY = .5f;
+        if (!_whichScene)
+        {
+            _cameraBody.m_ScreenX = .5f;
+            _cameraBody.m_ScreenY = .5f;
 
-        _cameraBody.m_DeadZoneWidth = 0f;
-        _cameraBody.m_DeadZoneHeight = 0f;
+            _cameraBody.m_DeadZoneWidth = 0f;
+            _cameraBody.m_DeadZoneHeight = 0f;
+            return;
+        }
+        else
+        {
+            var pos = transform.position;
 
-        //var pos = transform.position;
-        
-        //pos.x = _player.transform.position.x/* / _positionOffset*/;
-        //pos.z = _player.transform.position.z / _positionOffset;
-        //pos.y = (_player.transform.position.y + _distanceFromPlayer);
+            // delete /positionOffset za ver2
+            pos.x = _player.transform.position.x / _positionOffset * Time.deltaTime;
+            pos.z = _player.transform.position.z / _positionOffset * Time.deltaTime;
+            pos.y = (_player.transform.position.y + _distanceFromPlayer) * Time.deltaTime;
 
-        //transform.position = pos;
+            transform.position = pos;
+        }
     }
 }

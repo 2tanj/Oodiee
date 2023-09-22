@@ -264,7 +264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54709126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -314,11 +314,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54709126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063447b581217894cb2fb6d77c8a2444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _whichScene: 1
+  _player: {fileID: 0}
+  _distanceFromPlayer: 0
+  _positionOffset: 7
 --- !u!114 &54709130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,9 +396,9 @@ MonoBehaviour:
   - {fileID: -7229583153788420246, guid: d78046692350b84448fd56f785438508, type: 3}
   - {fileID: 7550384812301639995, guid: 7d5e7858ed263694f8e78bba6a090f8e, type: 3}
   _distance: 33.98
-  _amountToSpawn: 20
+  _amountToSpawn: 10
   _distanceToDespawn: 0
-  _spawnDistanceIncrement: 200
+  _spawnDistanceIncrement: 500
   _powerUpChance: 0.3
 --- !u!4 &87745704
 Transform:
@@ -639,11 +643,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631031335}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063447b581217894cb2fb6d77c8a2444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _whichScene: 1
+  _player: {fileID: 2137697475}
+  _distanceFromPlayer: -5.76
+  _positionOffset: 7
 --- !u!1 &652976880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,7 +1572,6 @@ GameObject:
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
-  - component: {fileID: 1687258583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1580,40 +1587,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
---- !u!114 &1687258583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -2340,14 +2313,14 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
   _toSwim: 1
-  _increaseSpeed: 1
-  _speed: 30
+  _increaseSpeed: 0
+  _speed: 20.5
   _steerSpeed: 7.5
   _tiltAngle: 45
   _smoothing: 7.5
   <HeartMesh>k__BackingField: {fileID: 3608049830716625978}
   <Shield>k__BackingField: {fileID: 1404273928}
-  <IsShielded>k__BackingField: 0
+  <IsShielded>k__BackingField: 1
 --- !u!1001 &101287098875984217
 PrefabInstance:
   m_ObjectHideFlags: 0
