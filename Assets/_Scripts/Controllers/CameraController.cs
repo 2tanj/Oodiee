@@ -29,11 +29,11 @@ public class CameraController : MonoBehaviour
     {
         if (!_whichScene)
         {
-            _cameraBody.m_ScreenX = .5f;
-            _cameraBody.m_ScreenY = .5f;
+            //_cameraBody.m_ScreenX = .5f;
+            //_cameraBody.m_ScreenY = .5f;
 
-            _cameraBody.m_DeadZoneWidth = 0f;
-            _cameraBody.m_DeadZoneHeight = 0f;
+            //_cameraBody.m_DeadZoneWidth = 0f;
+            //_cameraBody.m_DeadZoneHeight = 0f;
             return;
         }
         else
@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
             // delete /positionOffset za ver2
             pos.x = _player.transform.position.x / _positionOffset * Time.deltaTime;
             pos.z = _player.transform.position.z / _positionOffset * Time.deltaTime;
-            pos.y = (_player.transform.position.y + _distanceFromPlayer) * Time.deltaTime;
+            pos.y = (_player.transform.position.y + _distanceFromPlayer) /** Time.deltaTime*/;
 
             transform.position = pos;
         }
