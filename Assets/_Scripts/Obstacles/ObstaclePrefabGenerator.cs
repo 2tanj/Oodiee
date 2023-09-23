@@ -5,14 +5,24 @@ using UnityEditor;
 using System.IO;
 
 [ExecuteInEditMode]
-public class TestingObstacles : MonoBehaviour
+public class ObstaclePrefabGenerator : MonoBehaviour
 {
+    // TODO:
+    // ADD LIST OF FUNCTIONS(for types of tubes)
+    // YOU SELECT THE ONE YOU WANT IN INSPECTOR
+    // AND USE THAT ONE WHEN GENERATING PREFAB
+
+    // maybe remvoe ObstaclePrefabGenerator component from final prefab
+
     private const float TUBE_RADIUS = 0.06590513f;
     
     private Bounds _bounds;
 
     [SerializeField]
     private float _circleRadius = .02f;
+
+    [SerializeField]
+    private string _folderName = "TestingTubes";
 
     void Start() =>
         _bounds = GetComponent<MeshFilter>().sharedMesh.bounds;
@@ -23,7 +33,7 @@ public class TestingObstacles : MonoBehaviour
 
         Vector3 start = default;
         List<Vector3> ends;
-        YShapedStartEnd(out start, out ends);
+        DefaultStartEnd(out start, out ends);
         
         Gizmos.DrawWireSphere(start, _circleRadius);
 
@@ -32,16 +42,22 @@ public class TestingObstacles : MonoBehaviour
         ends.ForEach(e => Gizmos.DrawWireSphere(e, _circleRadius));
     }
 
-    [ContextMenu("Generate start and end")]
-    private void Testing()
+    [ContextMenu("Generate prefab with a start and end ")]
+    private void GeneratePrefab()
     {
+        // setting up the object
+        transform.position   = Vector3.zero;
+        transform.rotation   = Quaternion.identity;
+        transform.localScale = new Vector3(1, 1, 1);
+        gameObject.AddComponent<Obstacle>();
+
         // getting start/end pos
         Vector3 start = default;
         List<Vector3> ends;
-        YShapedStartEnd(out start, out ends);
+        DefaultStartEnd(out start, out ends);
 
         // spawning start/end
-        var obj = new GameObject();
+        var obj = new GameObject(); // instancing an empty game object to use when instanciating, we destroy it when done
 
         var startObj = Instantiate(obj, start, transform.rotation, transform);
         startObj.name = "Start";
@@ -55,21 +71,22 @@ public class TestingObstacles : MonoBehaviour
 
             endsObj.Add(endObj);
         }
-
         DestroyImmediate(obj);
 
         // creating prefab
-        if (!Directory.Exists("Assets/_Prefabs/TestingTubes"))
-            AssetDatabase.CreateFolder("Assets/_Prefabs", "TestingTubes");
-        if (Directory.GetFiles("Assets/_Prefabs/TestingTubes", name + ".prefab").Length > 0)
+        if (!Directory.Exists("Assets/_Prefabs/" + _folderName))
+            AssetDatabase.CreateFolder("Assets/_Prefabs", _folderName);
+
+        if (Directory.GetFiles("Assets/_Prefabs/" + _folderName, name + ".prefab").Length > 0)
         {
             Debug.LogError($"{name}.prefab ALREADY EXISTS, PREFAB GENERATION STOPPED!");
             DestroyImmediate(startObj);
             endsObj.ForEach(obj => DestroyImmediate(obj));
+
             return;
         }
         
-        string localPath = "Assets/_Prefabs/TestingTubes/" + name + ".prefab";
+        string localPath = $"Assets/_Prefabs/{_folderName}/" + name + ".prefab";
         PrefabUtility.SaveAsPrefabAsset(gameObject, localPath);
 
         DestroyImmediate(startObj);
